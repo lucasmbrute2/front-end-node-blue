@@ -1,0 +1,29 @@
+@import "../../../styles/colors";
+@import "../../../styles/style.scss";
+
+
+.header{
+    background-color: $color-primary;
+    .container{
+        @include container
+    }
+    &-list{
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        &-item{
+            color: rgba(255, 255, 255, 0.637);
+            text-decoration: none;
+            padding: 1% 2%;
+            cursor: pointer;
+            transition: .2s all;
+            font-size: 20px;
+            font-weight: 400;
+            &:hover{
+               color: #fff; 
+            }
+        }
+    } 
+}

@@ -1,0 +1,70 @@
+@import "../../styles/colors";
+@import "../../styles/style.scss";
+
+@mixin buttons{
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    transition: .4s all;
+    &:hover{
+        transform: scale(1.1);
+        color: #fff;
+    }
+}
+.add{
+    width: 30%;
+    height: 100%;
+    display: block;
+    margin: 30px auto;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.29);
+    border: 3px solid $color-primary;
+    border-radius: 10px;
+    &-h1{
+        text-align: center;
+    }
+    &-form{
+        width: 100%;
+        text-align: flex-start;
+        margin: 130px auto;
+        &-group{
+            margin: 25px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            &-label{
+                font-weight: 500;
+                color: $color-primary;
+            }    
+            &-input{
+                width: 90%;
+                margin: 10px 60px;
+                outline-style: none;
+                border: 1px solid $color-primary;
+                
+            }
+        }    
+        &-buttons{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 5rem;
+            transition: .2s ease-out;
+            &-cancelar{
+                @include buttons;
+                background-color: $color-danger;
+            }
+            &-salvar{
+                @include buttons;
+                background-color: $color-sucess;
+
+            }
+           
+        }
+    }       
+}       
+

@@ -1,0 +1,16 @@
+@import "../../styles/colors";
+@import "../../styles/style.scss";
+
+.content{
+    @include container;
+    flex: 1;
+    &-title{
+        text-align: center;
+        color: $color-primary;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    &-list{
+        @include container
+    }
+}
