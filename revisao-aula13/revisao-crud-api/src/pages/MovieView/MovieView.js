@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./MovieView.scss"
 import { Api } from "../../api/api";
+import { Link } from "react-router-dom";
 
 const MovieView = (props)=>{
     //pegar o id e chamar a api na url passada no back ->http://localhost:3002/filmes/filme/
@@ -31,7 +32,9 @@ const MovieView = (props)=>{
                 <p className="view-info-text"><b>Nome: </b> {filme.nome}</p>
                 <p className="view-info-text"><b>Lançamento: </b> {filme.lancamento}</p>
                 <a className="view-info-text" href={filme.trailer} target="_blank">Trailer</a>
-                <button className="btn btn-success">Editar</button>
+                <Link to={`/edit/${filme._id}`}>
+                    <button className="btn btn-success">Editar</button>
+                </Link>
                 <button className= "btn btn-danger">Excluir</button>
             </div>
         </section>

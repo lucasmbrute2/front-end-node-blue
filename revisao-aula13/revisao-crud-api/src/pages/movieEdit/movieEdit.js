@@ -1,34 +1,12 @@
-import React from 'react';
-import "./addMovie.scss"
-import { Api } from "../../api/api";
-const addMovie = (props)=>{
-    
-    const HandleSubmit= async (e)=>{
-        e.preventDefault()
-        const nome = e.target.nome.value
-        const lancamento = e.target.lancamento.value
-        const url = e.target.url.value
-        
-        const Movie = {
-            nome: nome,
-            lancamento: lancamento,
-            imagem: url
-        }
-        const response = await Api.fetchPost(Movie);
-        const data = await response
-       
-        try{
-            props.history.push('/') // retorna para a rota indicada no push
-        }catch(error){
-            console.log(error)
+import React from "react";
+import './movieEdit.scss'
 
-        }
-    }
-
+const movieEdit = ()=>{
     return(
+        <div>
         <section className="add">
-            <h1 className="add-h1">Cadastre um Filme</h1>
-            <form className="add-form" onSubmit={HandleSubmit}>
+            <h1 className="add-h1">Editar</h1>
+            <form className="add-form">
                 <div className="add-form-group">
                     <label htmlFor = "nome" className="add-form-group-label">Nome: </label>
                     <input type="text" id="nome" name="nome"className="add-form-group-input"/>
@@ -49,10 +27,9 @@ const addMovie = (props)=>{
                     
                 </div>
             </form>
-            
-        
         </section>
+        </div>
     )
 }
 
-export default addMovie;
+export default movieEdit;
