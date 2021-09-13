@@ -14,10 +14,11 @@ const addMovie = (props)=>{
             lancamento: lancamento,
             imagem: url
         }
-        const response = await Api.fetchPost(Movie);
-        const data = await response
-       
+        
+        
         try{
+            const response = await Api.fetchPost(Movie);
+            const data = await response
             props.history.push('/') // retorna para a rota indicada no push
         }catch(error){
             console.log(error)
